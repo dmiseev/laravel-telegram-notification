@@ -1,0 +1,41 @@
+{
+    "name": "dmiseev/laravel-telegram-notification",
+    "version": "1.0",
+    "description": "Telegram Notification for Laravel framework",
+    "keywords": [
+        "laravel",
+        "telegram",
+        "notification",
+        "telegram notification"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitriy Aseev",
+            "email": "dmiseev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "illuminate/notifications": "*",
+        "illuminate/support": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.6",
+        "sebastian/version": "^1.0.1",
+        "mockery/mockery": "0.9.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Dmiseev\\TelegramNotification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dmiseev\\TelegramNotification\\Tests\\": "tests"
+        }
+    }
+}
