@@ -36,6 +36,25 @@ use Illuminate\Notifications\Notification;
 
 class WithdrawCreate extends Notification
 {
+    /**
+     * @var Withdraw
+     */
+    private $withdraw;
+    
+    /**
+     * @var User
+     */
+    private $user;
+
+    /**
+     * @param Withdraw $withdraw
+     */
+    public function __construct(Withdraw $withdraw, User $user)
+    {
+        $this->withdraw = $withdraw;
+        $this->user = $user;
+    }
+    
     public function via($notifiable)
     {
         return [TelegramChannel::class];
@@ -44,9 +63,9 @@ class WithdrawCreate extends Notification
     public function toTelegram($notifiable)
     {
         return TelegramMessage::create()
-            ->to($this->user->telegram_user_id) // Optional.
-            ->content("*HI!* \n One of your withdraws has been created!") // Markdown supported.
-            ->button('View Withdraw', url('/withdraws/' . $this->invoice->id)); // Inline Button
+            ->to($this->user->telegram_user_id)
+            ->content("*HI!* \n One of your withdraws has been created!")
+            ->button('View Withdraw', url('/withdraws/' . $this->withdraw->id));
     }
 }
 ```
