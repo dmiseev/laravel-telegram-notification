@@ -24,8 +24,8 @@ class TelegramNotificationProvider extends ServiceProvider
 
         $this->app->singleton(TelegramChannel::class, function () {
             return new Telegram(
-                config('services.telegram.token'),
-                new HttpClient
+                new HttpClient,
+                config('services.telegram.token')
             );
         });
     }
