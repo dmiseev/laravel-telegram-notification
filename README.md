@@ -20,7 +20,7 @@ Then, configure your Telegram Bot API Token:
 // config/services.php
 ...
 'telegram' => [
-    'token' => env('TELEGRAM_BOT_TOKEN', 'YOUR BOT TOKEN HERE')
+    'token' => env('TELEGRAM_TOKEN', 'YOUR BOT TOKEN HERE')
 ],
 ...
 ```
@@ -34,7 +34,7 @@ use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 use Illuminate\Notifications\Notification;
 
-class InvoicePaid extends Notification
+class WithdrawCreate extends Notification
 {
     public function via($notifiable)
     {
@@ -43,12 +43,10 @@ class InvoicePaid extends Notification
 
     public function toTelegram($notifiable)
     {
-        $url = url('/invoice/' . $this->invoice->id);
-
         return TelegramMessage::create()
             ->to($this->user->telegram_user_id) // Optional.
-            ->content("*HELLO!* \n One of your invoices has been paid!") // Markdown supported.
-            ->button('View Invoice', $url); // Inline Button
+            ->content("*HI!* \n One of your withdraws has been created!") // Markdown supported.
+            ->button('View Withdraw', url('/withdraws/' . $this->invoice->id)); // Inline Button
     }
 }
 ```
@@ -60,8 +58,6 @@ You can either send the notification by providing with the chat id of the recipi
 ``` php
 ...
 /**
- * Route notifications for the Telegram channel.
- *
  * @return int
  */
 public function routeNotificationForTelegram()
