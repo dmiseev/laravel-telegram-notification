@@ -30,8 +30,8 @@ Then, configure your Telegram Bot API Token:
 You can now use the channel in your `via()` method inside the Notification class.
 
 ``` php
-use NotificationChannels\Telegram\TelegramChannel;
-use NotificationChannels\Telegram\TelegramMessage;
+use Dmiseev\TelegramNotification\TelegramChannel;
+use Dmiseev\TelegramNotification\TelegramMessage;
 use Illuminate\Notifications\Notification;
 
 class WithdrawCreate extends Notification
