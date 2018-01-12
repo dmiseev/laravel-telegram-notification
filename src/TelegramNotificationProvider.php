@@ -21,13 +21,13 @@ class TelegramNotificationProvider extends ServiceProvider
 //                    new HttpClient
 //                );
 //            });
-//
-//        $this->app->bind(TelegramChannel::class, function () {
-//            return new Telegram(
-//                config('services.telegram.token'),
-//                new HttpClient
-//            );
-//        });
+
+        $this->app->singleton(TelegramChannel::class, function () {
+            return new Telegram(
+                config('services.telegram.token'),
+                new HttpClient
+            );
+        });
     }
 
     /**
