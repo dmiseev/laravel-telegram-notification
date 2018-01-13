@@ -18,7 +18,7 @@ class TelegramException extends \Exception
         $statusCode = $exception->getResponse()->getStatusCode();
         $description = 'no description given';
 
-        if ($result = json_decode($exception->getResponse()->getBody())) {
+        if ($result = json_decode($exception->getResponse()->getBody()->getContents())) {
             $description = $result->description ?: $description;
         }
 
