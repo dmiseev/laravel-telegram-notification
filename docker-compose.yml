@@ -1,7 +1,0 @@
-version: "2"
-services:
- php-fpm:
-   image: dmiseev/php-fpm7.1
-   volumes:
-    - .:/usr/local/src/laravel-telegram-notification
-   working_dir: /usr/local/src/laravel-telegram-notification

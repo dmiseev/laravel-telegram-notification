@@ -37,5 +37,12 @@
         "psr-4": {
             "Dmiseev\\TelegramNotification\\Tests\\": "tests"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dmiseev\\TelegramNotification\\TelegramNotificationProvider"
+            ]
+        }
     }
 }

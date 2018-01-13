@@ -13,15 +13,6 @@ class TelegramNotificationProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $this->app->when(TelegramChannel::class)
-//            ->needs(Telegram::class)
-//            ->give(function () {
-//                return new Telegram(
-//                    config('services.telegram.token'),
-//                    new HttpClient
-//                );
-//            });
-
         $this->app->singleton(TelegramChannel::class, function () {
             return new Telegram(
                 new HttpClient,
