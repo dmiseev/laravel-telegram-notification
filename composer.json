@@ -1,6 +1,5 @@
 {
     "name": "dmiseev/laravel-telegram-notification",
-    "version": "1.0",
     "description": "Telegram Notification for Laravel framework",
     "keywords": [
         "laravel",
