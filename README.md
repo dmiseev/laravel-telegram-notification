@@ -1,4 +1,4 @@
-# Telegram Notifications for Laravel 5.5
+# Telegram Notifications for Laravel 5.6
 
 This package makes it easy to send Telegram notification using [Telegram Bot API](https://core.telegram.org/bots) with Laravel 5.5.
 
